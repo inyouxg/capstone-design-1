@@ -1,0 +1,64 @@
+.setting-container{
+  display: flex;
+  width: 328px;
+  min-height: 100vh;
+  margin: auto;
+}
+.setting-container__form{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: auto 0;
+  gap: 20px;
+}
+.setting-container__form-input{
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  font-weight: 600;
+}
+.setting-container__input{
+  width: 100%;
+  padding: 18px 10px;
+  background-color: #F6F7FA;
+  border: none;
+  border-radius: 6px;
+  color: #9D9FA0;
+}
+.setting-container__form-radio{
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.setting-container__form-select{
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  font-weight: 600;
+}
+.setting-container__select{
+  width: 100%;
+  margin-bottom: 42px;
+  padding: 10px 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #9D9FA0;
+
+  appearance: none;
+  background: url('/src/assets/drop-down-button.svg') no-repeat right 10px center;
+  background-size: 16px;
+}
+.setting-container__button{
+  width: 100%;
+  height: 50px;
+  background: linear-gradient(to right, #ABE5A1, #5BA2FF);
+  
+  border-radius: 8px;
+  border: none;
+  color: white;
+  font-size: 16px;
+}
