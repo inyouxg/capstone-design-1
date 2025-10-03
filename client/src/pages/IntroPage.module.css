@@ -1,11 +1,16 @@
-.intro-container{
+.intro-container {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  justify-content: space-between;
+  min-height: 100dvh;
 }
 .intro-container__image-wrapper{
   position: relative;
 }
+.intro-container__image {
+  width: 100%;
+}
+
 .intro-container__image-wrapper::after {
   content: ""; /*::after 사용을 위해 가상 요소 내용 채우기*/
   position: absolute;
@@ -34,8 +39,8 @@
   flex-direction: column;
   align-items: center;
 
-  width: 280px;
-  margin: auto auto 60px auto;
+  width: 328px;
+  margin: 0 auto 60px auto;
   gap: 10px;
 }
 .intro-container__text{
@@ -50,4 +55,5 @@
   
   border-radius: 8px;
   border: none;
+  font-size: 16px;
 }

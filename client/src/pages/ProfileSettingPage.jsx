@@ -4,7 +4,9 @@ import styles from './ProfileSettingPage.module.css'
 export const ProfileSettingPage = () => {
   return (
     <div className={styles['setting-container']}>
-      <form className={styles['setting-container__form']}>
+      <form
+        id='profile-form'
+        className={styles['setting-container__form']}>
         <InputField
           label='name'
           type='text'
@@ -64,12 +66,13 @@ export const ProfileSettingPage = () => {
             <option value="very-active">매우 활동적(주 5~7회 운동)</option>
           </select>
         </div>
-        <button
-          type='submit'
-          className={styles['setting-container__button']}>
-          리포트 시작하기
-        </button>
       </form>
+      <button
+        form='profile-form'
+        type='submit'
+        className={styles['setting-container__button']}>
+        리포트 시작하기
+      </button>
     </div>
   )
 }

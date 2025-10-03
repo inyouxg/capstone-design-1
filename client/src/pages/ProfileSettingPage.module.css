@@ -1,22 +1,26 @@
 .setting-container{
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 328px;
   min-height: 100vh;
+  min-height: 100dvh;
   margin: auto;
 }
 .setting-container__form{
-  width: 100%;
-  margin: auto 0 60px auto;
+  flex: 1;/* 남는 공간을 차지 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   gap: 10px;
 }
 .setting-container__form-input{
   font-size: 14px;
   font-weight: 600;
-  margin-top: 10px;
 }
 .setting-container__input{
   width: 100%;
-  padding: 18px 10px;
+  padding: 15px 10px;
   background-color: #F6F7FA;
   border: none;
   border-radius: 6px;
@@ -38,8 +42,8 @@
 }
 .setting-container__select{
   width: 100%;
-  margin-bottom: 42px;
   padding: 10px 10px;
+  margin-top: 3px;
   border: none;
   border-radius: 6px;
   font-size: 14px;
@@ -52,6 +56,7 @@
 .setting-container__button{
   width: 100%;
   height: 50px;
+  margin-bottom: 60px;
   background: linear-gradient(to right, #ABE5A1, #5BA2FF);
   
   border-radius: 8px;
