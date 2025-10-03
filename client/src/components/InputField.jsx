@@ -1,4 +1,4 @@
-export const InputField = ({label, type, placeholder, id, className, inputClassName}) => {
+export const InputField = ({label, type, placeholder, id, className, inputClassName, register}) => {
   return (
     <div className={className}>
       <label htmlFor={label}>{label}</label>
@@ -6,6 +6,7 @@ export const InputField = ({label, type, placeholder, id, className, inputClassN
         type={type}
         placeholder={placeholder}
         id={id}
+        {...register}
         className={inputClassName} />
     </div>
   )
