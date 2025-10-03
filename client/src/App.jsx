@@ -7,7 +7,7 @@ function App() {
   return (
     <>
     <Routes>
-      <Route path='/' element={<ProfileSettingPage />} />
+      <Route path='/' element={<IntroPage />} />
       <Route path='/profile' element={<ProfileSettingPage />}/>
     </Routes>
     </>
