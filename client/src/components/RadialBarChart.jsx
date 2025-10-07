@@ -5,7 +5,7 @@ export const RadialBarChart = () => {
   const options = {
     series: [75],
     chart: {
-      height: 350,
+      height: 220,
       type: "radialBar",
     },
     plotOptions: {
@@ -46,15 +46,17 @@ export const RadialBarChart = () => {
           name: {
             offsetY: -10,
             show: true,
-            color: "#888",
-            fontSize: "17px",
+            color: "#8E8E93",
+            fontSize: "13px",
           },
           value: {
             formatter: function (val) {
               return parseInt(val);
             },
-            color: "#111",
-            fontSize: "36px",
+            offsetY: 5,
+            color: "#404040",
+            fontSize: "32px",
+            fontWeight: "600",
             show: true,
           },
         },

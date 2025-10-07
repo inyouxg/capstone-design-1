@@ -1,0 +1,65 @@
+.report-container{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 320px;
+  height: auto;
+  background-color: white;
+  border-radius: 22px;
+  box-shadow: 0px 6px 10px rgba(17, 17, 17, 0.189);
+}
+.report-container__header{
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+.report-container__header p:first-child {
+  color: #AEAEB2;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.report-container__header p:last-child {
+  color: #404040;
+  font-size: 15px;
+  font-weight: 600;
+}
+.report-container__chart{
+  padding-top: 30px;
+}
+.nutrient-container{
+  display: flex;
+  gap: 28px;
+  padding-bottom: 15px;
+}
+.nutrient-container__section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.nutrient-container__section h3{
+  font-size: 14px;
+  font-weight: 700;
+}
+.nutrient-container__section p span:first-child{
+  font-size: 14px;
+  color: #8E8E93;
+  font-weight: 700;
+}
+.nutrient-container__section p span:nth-child(2){
+  font-size: 14px;
+  color: #C7C7CC;
+  font-weight: 700;
+}
+
+/*map 함수 폰트 색상*/
+.carbohydrate {
+  color: #5BA2FF;
+}
+.protein {
+  color: #5DC34C;
+}
+.fat {
+  color: #EF9873;
+}
