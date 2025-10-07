@@ -1,0 +1,23 @@
+{
+  "id": 1,
+  "date": "2025-10-06",
+  "total_calories": 1420,
+  "progress_percent": 76,
+  "macros": {
+    "carbohydrate": {
+      "value": 210,
+      "goal": 250,
+      "unit": "g"
+    },
+    "protein": {
+      "value": 55,
+      "goal": 80,
+      "unit": "g"
+    },
+    "fat": {
+      "value": 40,
+      "goal": 60,
+      "unit": "g"
+    }
+  }
+}
