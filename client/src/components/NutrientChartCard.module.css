@@ -24,6 +24,7 @@
   color: #404040;
   font-size: 15px;
   font-weight: 600;
+  text-align: end;
 }
 .report-container__chart{
   padding-top: 30px;

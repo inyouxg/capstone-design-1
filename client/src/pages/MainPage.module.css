@@ -1,0 +1,75 @@
+.main-container{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100dvh;
+}
+.main-container__bubble{
+  position: absolute;
+  width: 45px;
+  height: auto;
+  top: 18px;
+  right: 30px;
+  z-index: 999;
+}
+.main-container__header{
+  position: absolute;
+  top: 25px;
+  left: 0;
+  z-index: 999;
+}
+.main-container__header h3{
+  font-size: 16px;
+  font-weight: bold;
+  color: #404040;
+  padding-left: 20px;
+  padding-bottom: 3px;
+}
+.main-container__header-box{
+  width: 180px;
+  height: 40px;
+  background-color: #5BA2FF;
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 0 50px 50px 0;
+  padding-top: 12px;
+  padding-left: 20px;
+}
+
+.chart-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  width: 100%;
+  height: auto;
+  background-color: #F3F3F3;
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    #F3F3F3 5%,
+    #F3F3F3 95%,
+    transparent 100%
+  );
+}
+
+.diet-container{
+  margin: 0 auto;
+}
+.diet-container__section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 320px;
+}
+.diet-container__section h3{
+  font-size: 20px;
+  align-self: flex-start;
+  padding: 20px 0 10px 0;
+}
