@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "time": "2025-10-07T08:35:00",
+    "image": "",
+    "menu": ["귀리", "오트밀", "아몬드"],
+    "carbohydrate": 35,
+    "protein": 12,
+    "fat": 8,
+    "total_calories": 280
+  },
+  {
+    "id": 2,
+    "time": "2025-10-07T12:45:00",
+    "image": "",
+    "menu": ["닭가슴살 샐러드", "고구마"],
+    "carbohydrate": 40,
+    "protein": 30,
+    "fat": 7,
+    "total_calories": 370
+  },
+  {
+    "id": 3,
+    "time": "2025-10-07T16:20:00",
+    "image": "",
+    "menu": ["플레인 요거트", "견과류"],
+    "carbohydrate": 15,
+    "protein": 9,
+    "fat": 6,
+    "total_calories": 180
+  },
+  {
+    "id": 4,
+    "time": "2025-10-07T19:10:00",
+    "image": "",
+    "menu": ["현미밥", "닭가슴살", "구운야채"],
+    "carbohydrate": 50,
+    "protein": 32,
+    "fat": 10,
+    "total_calories": 460
+  }
+]
