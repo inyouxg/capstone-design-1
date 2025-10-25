@@ -1,0 +1,40 @@
+.nav-container{
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 68px;
+  background-color: rgba(229, 229, 232, 0.5);
+  gap: 68px;
+  margin-top: auto;
+  padding-left: 65px;
+}
+.nav-container__button{
+  position: absolute;
+  top: -25px;
+  right: -10px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  background-color: #5BA2FF;
+  border: none;
+  border-radius: 15px;
+}
+.nav-container__item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;   
+  width: 32px;
+  padding-top: 5px;
+  gap: 1px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: #727272;
+}

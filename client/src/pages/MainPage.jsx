@@ -41,9 +41,7 @@ export const MainPage = () => {
           <DietReportCard diet={diet}/>
         </div>
       </div>
-      <div className={styles['button-container']}>
-        <ButtonBar />
-      </div>
+      <ButtonBar />
     </div>
   )
 }
