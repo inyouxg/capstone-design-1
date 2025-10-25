@@ -43,6 +43,7 @@ export const ProfileSettingPage = () => {
   console.log(errors);
   return (
     <div className={styles['setting-container']}>
+      {isLoading && <LoadingSpinner />}
       <form
         id='profile-form'
         className={styles['setting-container__form']}
