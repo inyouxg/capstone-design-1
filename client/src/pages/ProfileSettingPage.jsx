@@ -1,9 +1,13 @@
 import { useForm } from 'react-hook-form'
 import { InputField } from '../components/InputField'
+import { useProfileSubmit } from '../hooks/userProfileSubmit'
+import { getLocalId } from '../utils/localId'
+import { LoadingSpinner } from '../components/LoadingSpinner'
 import styles from './ProfileSettingPage.module.css'
 
 export const ProfileSettingPage = () => {
   const { register, handleSubmit, formState: { errors, isValid } } = useForm({ mode: "onChange" });
+  const { submitProfile, isLoading, isError } = useProfileSubmit();
 
   const registerRules = {
     name: { required: "이름을 입력해 주세요." },
@@ -24,9 +28,16 @@ export const ProfileSettingPage = () => {
     activity: { required: "활동 수준 선택은 필수입니다." }
   };
 
-
-  const onSubmit = (data) => {
-    console.log(data); //API 추가 예정
+  const onSubmit = async (data) => {
+    const localId = getLocalId();
+    const content = { localId, ...data };
+    const result = await submitProfile(content);
+    if (result?.success) {
+      alert("프로필이 성공적으로 저장되었습니다!"); /*모달 생성 예정*/
+      navigate("/main");
+    } else {
+      alert("프로필 저장 실패!"); /*모달 생성 예정*/
+    }
   }
 
   console.log(errors);
