@@ -1,7 +1,6 @@
 import { useForm } from 'react-hook-form'
 import { InputField } from '../components/InputField'
 import { useProfileSubmit } from '../hooks/userProfileSubmit'
-import { getLocalId } from '../utils/localId'
 import { LoadingSpinner } from '../components/LoadingSpinner'
 import styles from './ProfileSettingPage.module.css'
 
@@ -29,14 +28,17 @@ export const ProfileSettingPage = () => {
   };
 
   const onSubmit = async (data) => {
-    const localId = getLocalId();
-    const content = { localId, ...data };
-    const result = await submitProfile(content);
-    if (result?.success) {
-      alert("프로필이 성공적으로 저장되었습니다!"); /*모달 생성 예정*/
-      navigate("/main");
-    } else {
-      alert("프로필 저장 실패!"); /*모달 생성 예정*/
+    try{
+      const result = await submitProfile(data);
+      if (result?.success) {
+        alert("프로필이 성공적으로 저장되었습니다!"); /*모달 생성 예정*/
+        navigate("/main");
+      } else {
+        alert("프로필 저장 실패!"); /*모달 생성 예정*/
+      }
+    }catch(error){
+      console.log("프로필 저장 오류", error);
+      alert("서버 오류가 발생했습니다.");
     }
   }
 
