@@ -1,22 +1,46 @@
+import styles from './MainPage.module.css';
 import dashboardData from '../mock/dashboardData.json'
 import dietData from '../mock/dietData.json'
-import styles from './MainPage.module.css';
 import bubble from '../assets/bubble-icon.svg'
 import { useEffect, useState } from 'react';
 import { NutrientChartCard } from '../components/NutrientChartCard';
 import { DietReportCard } from '../components/DietReportCard';
 import { ButtonBar } from '../components/ButtonBar';
+import { LoadingSpinner } from '../components/LoadingSpinner';
+import { getDashboardData, getMealsToday } from '../api/mainAPI';
 
 export const MainPage = () => {
-  const [dashboard, setDashboard] = useState(null);
-  const [diet, setDiet] = useState(null);
+  const [state, setState] = useState({
+    loading: true,
+    error: null,
+    dashboard: null,
+    diet: null,
+  });
 
   useEffect(() => {
-    setDashboard(dashboardData);
-    setDiet(dietData);
-  },[]);
+    (async () => {
+      try {
+        const [dashboard, diet] = await Promise.all([
+          getDashboardData(),
+          getMealsToday(),
+        ]);
+        setState({ loading: false, error: null, dashboard, diet });
+      } catch (error) {
+        // 서버 에러 시 → mock data
+        console.error(
+          "서버 오류, mock data 호출",
+          error?.response?.status,
+          error?.response?.data || error?.message
+        );
+        setState({ loading: false, error: error, dashboard: dashboardData, diet: dietData });
+      }
+    })();
 
-  if (!dashboard) return null;
+  }, []);
+
+  if (state.loading) return <LoadingSpinner />;
+
+  const { dashboard, diet } = state;
 
   return (
     <div className={styles['main-container']}>
