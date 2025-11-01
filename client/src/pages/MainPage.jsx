@@ -18,14 +18,17 @@ export const MainPage = () => {
   });
 
   useEffect(() => {
+    let mounted = true;
     (async () => {
       try {
         const [dashboard, diet] = await Promise.all([
           getDashboardData(),
           getMealsToday(),
         ]);
+        if (!mounted) return;
         setState({ loading: false, error: null, dashboard, diet });
       } catch (error) {
+        if (!mounted) return;
         // 서버 에러 시 → mock data
         console.error(
           "서버 오류, mock data 호출",
@@ -35,6 +38,10 @@ export const MainPage = () => {
         setState({ loading: false, error: error, dashboard: dashboardData, diet: dietData });
       }
     })();
+
+    return () => {
+      mounted = false;
+    };
 
   }, []);
 
