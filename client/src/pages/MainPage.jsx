@@ -1,5 +1,4 @@
-import profileData from '../mock/profileData.json'
-import nutrientData from '../mock/nutrientData.json'
+import dashboardData from '../mock/dashboardData.json'
 import dietData from '../mock/dietData.json'
 import styles from './MainPage.module.css';
 import bubble from '../assets/bubble-icon.svg'
@@ -9,30 +8,28 @@ import { DietReportCard } from '../components/DietReportCard';
 import { ButtonBar } from '../components/ButtonBar';
 
 export const MainPage = () => {
-  const [profile, setProfile] = useState(null);
-  const [nutrient, setNutrient] = useState(null);
+  const [dashboard, setDashboard] = useState(null);
   const [diet, setDiet] = useState(null);
 
   useEffect(() => {
-    setNutrient(nutrientData);
-    setProfile(profileData);
+    setDashboard(dashboardData);
     setDiet(dietData);
   },[]);
 
-  if (!nutrient) return null;
+  if (!dashboard) return null;
 
   return (
     <div className={styles['main-container']}>
       <img className={styles['main-container__bubble']} src={bubble} alt='bubble-icon' />
       <div className={styles['main-container__header']}>
-        <h3>{profileData.name}님</h3>
+        <h3>{dashboard.name}님</h3>
         <div className={styles['main-container__header-box']}>
-          <p>권장 칼로리 | {profileData['recommanded-calories']}kcal</p>
+          <p>권장 칼로리 | {dashboard.recommendedCalories}kcal</p>
         </div>
       </div>
       <div className={styles['chart-container']}>
         <div>
-          <NutrientChartCard nutrient={nutrient}/>
+          <NutrientChartCard dashboard={dashboard}/>
         </div>
       </div>
       <div className={styles['diet-container']}>

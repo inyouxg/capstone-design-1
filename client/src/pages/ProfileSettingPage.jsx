@@ -42,7 +42,6 @@ export const ProfileSettingPage = () => {
     }
   }
 
-  console.log(errors);
   return (
     <div className={styles['setting-container']}>
       {isLoading && <LoadingSpinner />}

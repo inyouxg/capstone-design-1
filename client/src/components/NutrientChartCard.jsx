@@ -1,7 +1,7 @@
 import { RadialBarChart } from './RadialBarChart'
 import styles from './NutrientChartCard.module.css';
 
-export const NutrientChartCard = ({ nutrient }) => {
+export const NutrientChartCard = ({ dashboard }) => {
   const macros = [
     { label: "탄수화물", key: "carbohydrate" },
     { label: "단백질", key: "protein" },
@@ -12,7 +12,7 @@ export const NutrientChartCard = ({ nutrient }) => {
     <div className={styles['report-container']}>
       <div className={styles['report-container__header']}>
         <p>섭취 칼로리</p>
-        <p>{nutrient.total_calories}</p>
+        <p>{dashboard.totalCalories}</p>
       </div>
       <div className={styles['report-container__chart']}>
         <RadialBarChart />
@@ -22,8 +22,8 @@ export const NutrientChartCard = ({ nutrient }) => {
           <div key={idx} className={styles['nutrient-container__section']}>
             <h3 className={styles[macro.key]}>{macro.label}</h3>
             <p>
-              <span>{nutrient.macros[macro.key].value}</span>
-              <span> / {nutrient.macros[macro.key].goal}g</span>
+              <span>{dashboard.macros[macro.key].value}</span>
+              <span> / {dashboard.macros[macro.key].goal}g</span>
             </p>
           </div>
         ))}

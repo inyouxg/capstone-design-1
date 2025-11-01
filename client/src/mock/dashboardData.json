@@ -1,8 +1,10 @@
 {
   "id": 1,
+  "name": "홍길동",
   "date": "2025-10-06",
-  "total_calories": 1420,
-  "progress_percent": 76,
+  "recommendedCalories": 1800,
+  "totalCalories": 1420,
+  "progress": 76,
   "macros": {
     "carbohydrate": {
       "value": 210,
