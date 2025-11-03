@@ -4,15 +4,21 @@ import today from '../assets/today-icon.svg'
 import report from '../assets/report-icon.svg'
 import gallery from '../assets/gallery-icon.svg'
 import styles from './ButtonBar.module.css'
+import { useModal } from '../contexts/ModalContext'
+import { UploadingModal } from '../modals/UploadingModal'
 
 export const ButtonBar = () => {
   const [image, setImage] = useState(null);
+  const {openModal, closeModal} = useModal();
 
   const onChange = (imageList) => {
     if (imageList.length > 0) {
       const selectedImage = imageList[0];
       console.log("selected-image: ", selectedImage);
       setImage(selectedImage);
+
+      //모달 열기
+      openModal(<UploadingModal image={selectedImage} onClose={closeModal}/>)
     }
   };
 
