@@ -2,7 +2,7 @@ import { useState } from "react"
 import styles from './UploadingModal.module.css'
 import { uploadDiet } from "../api/dietAPI";
 
-export const UploadingModal = ({image, closeModal}) => {
+export const UploadingModal = ({image, onClose, navigate}) => {
   const [time, setTime] = useState("");
   const [serving, setServing] = useState(1.0);
 
@@ -24,7 +24,7 @@ export const UploadingModal = ({image, closeModal}) => {
       console.log("업로드 결과:", result);
 
       if (result?.success) {
-        closeModal();
+        onClose();
         navigate("/report");
       } else {
         alert("업로드에 실패했습니다. 다시 시도해 주세요.");

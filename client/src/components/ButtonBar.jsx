@@ -6,10 +6,12 @@ import gallery from '../assets/gallery-icon.svg'
 import styles from './ButtonBar.module.css'
 import { useModal } from '../contexts/ModalContext'
 import { UploadingModal } from '../modals/UploadingModal'
+import { useNavigate } from "react-router-dom";
 
 export const ButtonBar = () => {
   const [image, setImage] = useState(null);
   const {openModal, closeModal} = useModal();
+  const navigate = useNavigate();
 
   const onChange = (imageList) => {
     if (imageList.length > 0) {
@@ -18,7 +20,7 @@ export const ButtonBar = () => {
       setImage(selectedImage);
 
       //모달 열기
-      openModal(<UploadingModal image={selectedImage} onClose={closeModal}/>)
+      openModal(<UploadingModal image={selectedImage} onClose={closeModal} navigate={navigate}/>)
     }
   };
 

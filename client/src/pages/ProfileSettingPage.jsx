@@ -3,8 +3,10 @@ import { InputField } from '../components/InputField'
 import { useProfileSubmit } from '../hooks/userProfileSubmit'
 import { LoadingSpinner } from '../components/LoadingSpinner'
 import styles from './ProfileSettingPage.module.css'
+import { useNavigate } from 'react-router-dom'
 
 export const ProfileSettingPage = () => {
+  const navigate = useNavigate();
   const { register, handleSubmit, formState: { errors, isValid } } = useForm({ mode: "onChange" });
   const { submitProfile, isLoading, isError } = useProfileSubmit();
 

@@ -18,7 +18,7 @@
   height: 100%;
   background: white;
   border-radius: 95px 95px 0 0;
-  color: #8C8C8C;
+  color: #606060;
   font-size: 14px;
   font-weight: 600;
   gap: 15px;
@@ -45,6 +45,7 @@
   margin-top: 20px;
 }
 .modal-container__form-input{
+  margin-top: 5px;
   height: 50px;
   border-radius: 7px;
 }

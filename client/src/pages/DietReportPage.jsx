@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import styles from './DietReportPage.module.css'
 import image from '../assets/default-image.png'
 import home from '../assets/home-icon.svg'
@@ -6,6 +7,7 @@ import bubble from '../assets/bubble2-icon.svg'
 import smile from '../assets/smile-icon.svg'
 
 export const DietReportPage = () => {
+  const navigate = useNavigate();
   const macros = [
     { label: "탄수화물", key: "carbohydrate" },
     { label: "단백질", key: "protein" },
@@ -24,6 +26,7 @@ export const DietReportPage = () => {
           src={home}
           alt='home-icon'
           className={styles['report-container-home']}
+          onClick={() => navigate('/main')}
         />
         <img
           alt="diet-image"
