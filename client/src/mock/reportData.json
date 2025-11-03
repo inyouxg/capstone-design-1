@@ -1,0 +1,22 @@
+{
+  "date": "2025-11-03",
+  "meals": [
+    {
+      "id": 1,
+      "time": "08:25",
+      "items": [
+        { "name": "흰쌀밥", "calories": 200 },
+        { "name": "김치찌개", "calories": 220 },
+        { "name": "계란후라이", "calories": 110 },
+        { "name": "요구르트", "calories": 30 }
+      ]
+    }
+  ],
+  "total_calories": 560,
+  "macros": {
+    "carbohydrate": { "value": 100, "unit": "g" },
+    "protein": { "value": 25, "unit": "g" },
+    "fat": { "value": 45, "unit": "g" }
+  },
+  "feedback": "하루 총 섭취량은 적정 수준입니다. 저녁에 단백질을 충분히 보충해 주세요!"
+}

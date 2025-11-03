@@ -3,6 +3,7 @@ import { IntroPage } from "../pages/IntroPage";
 import { MainPage } from "../pages/MainPage";
 import { ProfileSettingPage } from "../pages/ProfileSettingPage";
 import { EntryRoute } from "./EntryRoute";
+import { DietReportPage } from "../pages/DietReportPage";
 
 const NotFound = () => (
   <main className="p-10">
@@ -17,6 +18,7 @@ const router = createBrowserRouter([
   { path: "/intro", element: <IntroPage /> },
   { path: "/profile", element: <ProfileSettingPage /> },
   { path: "/main", element: <MainPage /> },
+  { path: "/report", element: <DietReportPage /> },
   { path: "*", element: <NotFound /> },
 ]);
 
