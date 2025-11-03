@@ -11,19 +11,30 @@ export const UploadingModal = ({image, closeModal}) => {
   const handleSubmit = async () => {
     if (!time || !serving) {
       alert("시간과 식사량을 선택해 주세요!"); //모달 생성 예정
-      return
+      return;
     }
-    
-    const formData = new FormData();
-    formData.append("image", image.file);
-    formData.append("time", time);
-    formData.append("serving", serving);
 
-    const result = await uploadDiet(formData);
-    console.log(result);
+    try {
+      const formData = new FormData();
+      formData.append("image", image.file);
+      formData.append("time", time);
+      formData.append("serving", serving);
 
-    closeModal();
-  }
+      const result = await uploadDiet(formData);
+      console.log("업로드 결과:", result);
+
+      if (result?.success) {
+        closeModal();
+        navigate("/report");
+      } else {
+        alert("업로드에 실패했습니다. 다시 시도해 주세요.");
+      }
+    } catch (error) {
+      console.error("업로드 중 오류 발생:", error);
+      alert("서버 오류가 발생했습니다.");
+    }
+  };
+
 
 
   return (
