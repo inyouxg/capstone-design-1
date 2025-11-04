@@ -1,18 +1,43 @@
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from './DietReportPage.module.css'
 import image from '../assets/default-image.png'
 import home from '../assets/home-icon.svg'
-import diet from '../mock/reportData.json'
+import dietData from '../mock/reportData.json'
 import bubble from '../assets/bubble2-icon.svg'
 import smile from '../assets/smile-icon.svg'
+import { getDietReport } from "../api/dietAPI";
+import { LoadingSpinner } from "../components/LoadingSpinner";
 
 export const DietReportPage = () => {
+  const [diet, setDiet] = useState(null);
   const navigate = useNavigate();
   const macros = [
     { label: "탄수화물", key: "carbohydrate" },
     { label: "단백질", key: "protein" },
     { label: "지방", key: "fat" },
   ];
+
+  useEffect(() => {
+    let mounted = true;
+    (async () => {
+      try {
+        const data = await getDietReport();
+        if (!mounted) return;
+        setDiet(data);
+      } catch (error) {
+        console.error("서버 오류, mock data 호출",
+          error?.response?.status,
+          error?.response?.data || error?.message
+        );
+        if (!mounted) return;
+        setDiet(dietData);
+      }
+    })();
+    return () => (mounted = false);
+  }, []);
+
+  if (!diet) return <LoadingSpinner />;
 
   const mealsName = diet.meals[0].items.map(item => ({
     name: item.name,
