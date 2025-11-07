@@ -8,6 +8,7 @@
   font-weight: 600;
   color: #8C8C8C;
   padding-left: 5px;
+  transform: translate(0, 5px);
 }
 
 .diet-card{

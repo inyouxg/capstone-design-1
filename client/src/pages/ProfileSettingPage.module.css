@@ -30,9 +30,13 @@
   display: flex;
   margin-top: 20px;
   margin-bottom: 20px;
-  gap: 10px;
+  gap: 15px;
   font-size: 14px;
   font-weight: 600;
+}
+.setting-container__radio{
+  margin-right: 3px;
+  transform: translate(0,1px);
 }
 .setting-container__form-select{
   display: flex;
