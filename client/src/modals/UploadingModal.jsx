@@ -5,6 +5,7 @@ import { uploadDiet } from "../api/dietAPI";
 export const UploadingModal = ({image, onClose, navigate}) => {
   const [time, setTime] = useState("");
   const [serving, setServing] = useState(1.0);
+  const [isLoading, setIsLoading] = useState(false);
 
   const SERVING_VALUES = ["0.5", "1.0", "1.5"];
 
@@ -15,6 +16,8 @@ export const UploadingModal = ({image, onClose, navigate}) => {
     }
 
     try {
+      setIsLoading(true);
+      
       const formData = new FormData();
       formData.append("image", image.file);
       formData.append("time", time);
@@ -32,6 +35,8 @@ export const UploadingModal = ({image, onClose, navigate}) => {
     } catch (error) {
       console.error("업로드 중 오류 발생:", error);
       alert("서버 오류가 발생했습니다.");
+    }finally{
+      setIsLoading(false);
     }
   };
 
