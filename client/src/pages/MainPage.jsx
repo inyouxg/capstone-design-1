@@ -2,6 +2,7 @@ import styles from './MainPage.module.css';
 import dashboardData from '../mock/dashboardData.json'
 import dietData from '../mock/dietData.json'
 import bubble from '../assets/bubble-icon.svg'
+import spoon from '../assets/spoon.png'
 import { useEffect, useState } from 'react';
 import { NutrientChartCard } from '../components/NutrientChartCard';
 import { DietReportCard } from '../components/DietReportCard';
@@ -66,7 +67,17 @@ export const MainPage = () => {
       <div className={styles['diet-container']}>
         <div className={styles['diet-container__section']}>
           <h3>Diet Report</h3>
-          <DietReportCard diet={diet}/>
+          {
+            (!diet || diet.length == 0) ? (
+              <div className={styles['diet-container__empty']}>
+                <span>
+                  오늘의 식단을 등록하고,<br />
+                  AI 영양 리포트를 받아보세요
+                </span>
+                <img src={spoon}/>
+              </div>
+            ) : (<DietReportCard diet={diet} />)
+          }
         </div>
       </div>
       <ButtonBar />

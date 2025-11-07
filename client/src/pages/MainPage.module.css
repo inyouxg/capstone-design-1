@@ -73,3 +73,24 @@
   align-self: flex-start;
   padding: 20px 0 10px 0;
 }
+
+.diet-container__empty {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 320px;
+  height: 100px;
+  background-color: #c1c1c1;
+  border-radius: 20px;
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  font-size: 15px;
+  padding-left: 17px;
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
+}
+.diet-container__empty img {
+  position: absolute;
+  width: 90px;
+  top: 20px;
+  right: 20px;
+}
