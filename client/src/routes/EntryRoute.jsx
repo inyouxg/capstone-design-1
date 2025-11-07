@@ -12,6 +12,7 @@ export const EntryRoute = () => {
     (async () => {
       try {
         await ensureAnonymousSession();
+        await new Promise((r) => setTimeout(r, 500)); //쿠키 저장할 시간
         const { completed } = await getProfileStatus(); // 프로필 완료 여부 확인
         if (!mounted) return;
 
