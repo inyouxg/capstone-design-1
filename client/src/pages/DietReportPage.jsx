@@ -13,6 +13,7 @@ export const DietReportPage = () => {
   const [diet, setDiet] = useState(null);
   const navigate = useNavigate();
   const macros = [
+    { label: "당류", key: "sugar" },
     { label: "탄수화물", key: "carbohydrate" },
     { label: "단백질", key: "protein" },
     { label: "지방", key: "fat" },

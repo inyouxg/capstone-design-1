@@ -99,7 +99,9 @@
 .fat {
   color: #EF9873;
 }
-
+.sugar{
+  color: #ff627a;
+}
 .feedback-container{
   display: flex;
   flex-direction: column;
