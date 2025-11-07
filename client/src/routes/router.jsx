@@ -4,6 +4,7 @@ import { MainPage } from "../pages/MainPage";
 import { ProfileSettingPage } from "../pages/ProfileSettingPage";
 import { EntryRoute } from "./EntryRoute";
 import { DietReportPage } from "../pages/DietReportPage";
+import { ProfileSettingModal } from "../modals/ProfileSettingModal";
 
 const NotFound = () => (
   <main className="p-10">

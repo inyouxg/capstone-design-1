@@ -4,11 +4,16 @@ import { useProfileSubmit } from '../hooks/userProfileSubmit'
 import { LoadingSpinner } from '../components/LoadingSpinner'
 import styles from './ProfileSettingPage.module.css'
 import { useNavigate } from 'react-router-dom'
+import { useModal } from '../contexts/ModalContext'
+import { ProfileSettingModal } from '../modals/ProfileSettingModal'
 
 export const ProfileSettingPage = () => {
   const navigate = useNavigate();
   const { register, handleSubmit, formState: { errors, isValid } } = useForm({ mode: "onChange" });
   const { submitProfile, isLoading, isError } = useProfileSubmit();
+  const {openModal, closeModal} = useModal();
+
+  
 
   const registerRules = {
     name: { required: "이름을 입력해 주세요." },
@@ -33,8 +38,7 @@ export const ProfileSettingPage = () => {
     try{
       const result = await submitProfile(data);
       if (result?.success) {
-        alert("프로필이 성공적으로 저장되었습니다!"); /*모달 생성 예정*/
-        navigate("/main");
+        openModal(<ProfileSettingModal navigate={navigate}/>)
       } else {
         alert("프로필 저장 실패!"); /*모달 생성 예정*/
       }
