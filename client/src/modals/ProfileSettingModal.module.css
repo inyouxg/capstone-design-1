@@ -12,11 +12,13 @@
 .modal-container__title{
   font-size: 19px;
   color: #404040;
-  padding: 10px;
+  padding-bottom: 20px;
+  padding-top: 5px;
 }
 .modal-container__text{
   font-size: 14px;
   color: #AEAEB2;
+  padding-bottom: 7px;
 }
 .modal-container__button{
   width: 200px;
