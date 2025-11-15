@@ -30,6 +30,8 @@ export const ButtonBar = () => {
       onChange={onChange}
       dataURLKey="data_url"
       acceptType={["jpg", "png", "jpeg"]}
+      multiple={false}
+      maxNumber={1}
     >
       {({ onImageUpload }) => (
         <nav className={styles["nav-container"]}>

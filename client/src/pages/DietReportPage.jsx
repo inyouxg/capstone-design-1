@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import styles from './DietReportPage.module.css'
 import image from '../assets/default-image.png'
 import home from '../assets/home-icon.svg'
@@ -12,6 +12,7 @@ import { LoadingSpinner } from "../components/LoadingSpinner";
 export const DietReportPage = () => {
   const [diet, setDiet] = useState(null);
   const navigate = useNavigate();
+  const { mealId } = useParams();
   const macros = [
     { label: "당류", key: "sugar" },
     { label: "탄수화물", key: "carbohydrate" },
@@ -23,7 +24,7 @@ export const DietReportPage = () => {
     let mounted = true;
     (async () => {
       try {
-        const data = await getDietReport();
+        const data = await getDietReport(mealId);
         if (!mounted) return;
         setDiet(data);
       } catch (error) {
@@ -36,7 +37,7 @@ export const DietReportPage = () => {
       }
     })();
     return () => (mounted = false);
-  }, []);
+  }, [mealId]);
 
   if (!diet) return <LoadingSpinner />;
 
