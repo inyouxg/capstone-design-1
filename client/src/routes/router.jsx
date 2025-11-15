@@ -19,7 +19,7 @@ const router = createBrowserRouter([
   { path: "/intro", element: <IntroPage /> },
   { path: "/profile", element: <ProfileSettingPage /> },
   { path: "/main", element: <MainPage /> },
-  { path: "/report", element: <DietReportPage /> },
+  { path: `/report/:mealId`, element: <DietReportPage /> },
   { path: "*", element: <NotFound /> },
 ]);
 

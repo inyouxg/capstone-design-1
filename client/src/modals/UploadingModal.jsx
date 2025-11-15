@@ -1,13 +1,52 @@
-import { useState } from "react"
+import * as exifr from "exifr";
+import { useEffect, useState } from "react"
 import styles from './UploadingModal.module.css'
 import { uploadDiet } from "../api/dietAPI";
 
-export const UploadingModal = ({image, onClose, navigate}) => {
+export const UploadingModal = ({ image, onClose, navigate }) => {
   const [time, setTime] = useState("");
   const [serving, setServing] = useState(1.0);
   const [isLoading, setIsLoading] = useState(false);
 
   const SERVING_VALUES = ["0.5", "1.0", "1.5"];
+  //이미지 촬영시간 자동 추출 + 없으면 현재 시간으로 대체
+  useEffect(() => {
+    const extractTime = async () => {
+      if (!image?.file) return;
+
+      try {
+        const fileObj = image?.file || image;
+        if (!fileObj) return;
+
+        const meta = await exifr.parse(fileObj);
+        let formattedTime = "";
+
+        if (meta?.DateTimeOriginal) {
+          const date = new Date(meta.DateTimeOriginal);
+          const hours = String(date.getHours()).padStart(2, "0");
+          const minutes = String(date.getMinutes()).padStart(2, "0");
+          formattedTime = `${hours}:${minutes}`;
+          console.log("촬영시간 추출:", formattedTime);
+        } else {
+          const now = new Date();
+          const hours = String(now.getHours()).padStart(2, "0");
+          const minutes = String(now.getMinutes()).padStart(2, "0");
+          formattedTime = `${hours}:${minutes}`;
+          console.log("EXIF 없음 — 현재 시각 :", formattedTime);
+        }
+
+        setTime(formattedTime);
+      } catch (error) {
+        console.error("EXIF 파싱 오류:", error);
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, "0");
+        const minutes = String(now.getMinutes()).padStart(2, "0");
+        setTime(`${hours}:${minutes}`);
+      }
+    };
+
+    extractTime();
+  }, [image]);
 
   const handleSubmit = async () => {
     if (!time || !serving) {
@@ -17,18 +56,19 @@ export const UploadingModal = ({image, onClose, navigate}) => {
 
     try {
       setIsLoading(true);
-      
+
+      const fileObj = image?.file || image;
       const formData = new FormData();
-      formData.append("image", image.file);
+      formData.append("file", fileObj);
       formData.append("time", time);
-      formData.append("serving", serving);
+      formData.append("serving", String(serving));
 
       const result = await uploadDiet(formData);
       console.log("업로드 결과:", result);
 
-      if (result?.success) {
+      if (result?.success && result?.meal_id) {
         onClose();
-        navigate("/report");
+        navigate(`/report/${result.meal_id}`);
       } else {
         alert("업로드에 실패했습니다. 다시 시도해 주세요.");
       }
