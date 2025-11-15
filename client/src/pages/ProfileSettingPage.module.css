@@ -68,6 +68,10 @@
   color: white;
   font-size: 16px;
 }
+.setting-container__button:hover {
+  background: linear-gradient(to right, #8CCB80, #3E82DD);
+  cursor: pointer;
+}
 .setting-container__button:disabled {
   background: #ccc;
   color: #666;

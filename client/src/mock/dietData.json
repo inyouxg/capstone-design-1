@@ -3,7 +3,7 @@
     "id": 1,
     "time": "2025-10-07T08:35:00",
     "image": "",
-    "menu": ["귀리", "오트밀", "아몬드"],
+    "menu": ["mockData", "오트밀", "아몬드"],
     "carbohydrate": 35,
     "protein": 12,
     "fat": 8,

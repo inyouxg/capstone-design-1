@@ -1,9 +1,8 @@
-import React from "react";
 import Chart from "react-apexcharts";
 
 export const RadialBarChart = () => {
   const options = {
-    series: [75],
+    series: [0],
     chart: {
       height: 220,
       type: "radialBar",
