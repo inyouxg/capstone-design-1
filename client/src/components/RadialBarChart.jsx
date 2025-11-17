@@ -1,8 +1,8 @@
 import Chart from "react-apexcharts";
 
-export const RadialBarChart = () => {
+export const RadialBarChart = ({progress}) => {
   const options = {
-    series: [0],
+    series: [progress],
     chart: {
       height: 220,
       type: "radialBar",

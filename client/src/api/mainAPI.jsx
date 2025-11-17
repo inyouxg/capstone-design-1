@@ -6,6 +6,6 @@ export const getDashboardData = async () => {
 }
 
 export const getMealsToday = async () => {
-  const { data } = await axiosInstance.get("/users/main/diet");
+  const { data } = await axiosInstance.get("/meal/list");
   return data;
 }

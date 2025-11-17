@@ -15,7 +15,7 @@ export const NutrientChartCard = ({ dashboard }) => {
         <p>{dashboard.totalCalories}</p>
       </div>
       <div className={styles['report-container__chart']}>
-        <RadialBarChart />
+        <RadialBarChart progress={dashboard.progress}/>
       </div>
       <div className={styles['nutrient-container']}>
         {macros.map((macro, idx) => (

@@ -7,7 +7,7 @@ export const uploadDiet = async (formData) => {
   return data;
 };
 
-export const getDietReport = async () => {
+export const getDietReport = async (mealId) => {
   const { data } = await axiosInstance.get(`/meal/report/${mealId}`);
   return data;
 }
