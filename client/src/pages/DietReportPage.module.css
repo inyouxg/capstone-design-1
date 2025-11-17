@@ -13,6 +13,7 @@
 }
 .report-container-image{
   height: 265px;
+  width: 300px;
   object-fit: cover;
   border-radius: 15px;
 }

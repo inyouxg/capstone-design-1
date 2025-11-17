@@ -57,7 +57,7 @@ export const DietReportPage = () => {
         />
         <img
           alt="diet-image"
-          src={diet.image ? diet.image : image}
+          src={diet.image_url ? `http://localhost:8000${diet.image_url}` : image}
           className={styles['report-container-image']}
         />
         <div className={styles['diet-container']}>
