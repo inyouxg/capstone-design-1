@@ -5,9 +5,9 @@ import image from '../assets/default-image.png'
 import home from '../assets/home-icon.svg'
 import dietData from '../mock/reportData.json'
 import bubble from '../assets/bubble2-icon.svg'
-import smile from '../assets/smile-icon.svg'
 import { getDietReport } from "../api/dietAPI";
 import { LoadingSpinner } from "../components/LoadingSpinner";
+import { BottomSheet } from "../components/BottomSheet";
 
 export const DietReportPage = () => {
   const [diet, setDiet] = useState(null);
@@ -89,15 +89,7 @@ export const DietReportPage = () => {
           </div>
         ))}
       </div>
-      <div className={styles['feedback-container']}>
-        <div className={styles['feedback-container__title']}>
-          <img src={smile} alt='smile-icon' />
-          <span>AI 건강 비서</span>
-        </div>
-        <div className={styles['feedback-container__content']}>
-          {diet.feedback}
-        </div>
-      </div>
+      <BottomSheet diet={diet}/>
     </div>
   )
 }
