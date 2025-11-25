@@ -4,7 +4,7 @@ import { MainPage } from "../pages/MainPage";
 import { ProfileSettingPage } from "../pages/ProfileSettingPage";
 import { EntryRoute } from "./EntryRoute";
 import { DietReportPage } from "../pages/DietReportPage";
-import { ProfileSettingModal } from "../modals/ProfileSettingModal";
+import { ProtectRoute } from "./ProtectRoute";
 
 const NotFound = () => (
   <main className="p-10">
@@ -16,8 +16,20 @@ const NotFound = () => (
 
 const router = createBrowserRouter([
   { path: "/", element: <EntryRoute /> },
-  { path: "/intro", element: <IntroPage /> },
-  { path: "/profile", element: <ProfileSettingPage /> },
+  {
+    path: "/intro",
+    element:
+      <ProtectRoute>
+        <IntroPage />
+      </ProtectRoute>
+  },
+  {
+    path: "/profile",
+    element:
+      <ProtectRoute>
+        <ProfileSettingPage />
+      </ProtectRoute>
+  },
   { path: "/main", element: <MainPage /> },
   { path: `/report/:mealId`, element: <DietReportPage /> },
   { path: "*", element: <NotFound /> },
