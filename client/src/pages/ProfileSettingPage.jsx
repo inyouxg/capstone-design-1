@@ -76,7 +76,7 @@ export const ProfileSettingPage = () => {
           register={register("age", registerRules.age)}
         />
         <InputField
-          label='height'
+          label='height(cm)'
           type='number'
           placeholder='키를 입력해 주세요.'
           id='height'
@@ -86,7 +86,7 @@ export const ProfileSettingPage = () => {
           register={register("height", registerRules.height)}
         />
         <InputField
-          label='weight'
+          label='weight(kg)'
           type='number'
           placeholder='몸무게를 입력해 주세요.'
           id='weight'

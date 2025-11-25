@@ -2,7 +2,7 @@ import axiosInstance from "./axiosInstance";
 
 export const ensureAnonymousSession = async () => {
   try {
-    await axiosInstance.post("users/auth/anonymous");
+    await axiosInstance.post("/users/auth/anonymous");
   } catch (error) {
     console.log("익명 세션 확인 오류", error);
   }

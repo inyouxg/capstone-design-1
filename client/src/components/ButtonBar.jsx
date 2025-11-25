@@ -7,6 +7,7 @@ import styles from './ButtonBar.module.css'
 import { useModal } from '../contexts/ModalContext'
 import { UploadingModal } from '../modals/UploadingModal'
 import { useNavigate } from "react-router-dom";
+import { WeeklyModal } from '../modals/WeeklyModal'
 
 export const ButtonBar = () => {
   const [image, setImage] = useState(null);
@@ -23,6 +24,10 @@ export const ButtonBar = () => {
       openModal(<UploadingModal image={selectedImage} onClose={closeModal} navigate={navigate}/>)
     }
   };
+
+  const handleClick = () => {
+    openModal(<WeeklyModal onClose={closeModal}/>)
+  }
 
   return (
     <ImageUploading
@@ -47,9 +52,10 @@ export const ButtonBar = () => {
             <span>today</span>
           </a>
 
-          <a className={styles["nav-container__item"]}>
+          <a className={styles["nav-container__item"]}
+          onClick={handleClick}>
             <img src={report} alt="report" />
-            <span>report</span>
+            <span>week</span>
           </a>
         </nav>
       )}

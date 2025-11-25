@@ -22,8 +22,12 @@
   width: 70px;
   height: 70px;
   background-color: #5BA2FF;
+  transition: background-color 0.3s ease;
   border: none;
   border-radius: 15px;
+}
+.nav-container__button:hover{
+  background-color: #2e89ff;
 }
 .nav-container__item{
   display: flex;

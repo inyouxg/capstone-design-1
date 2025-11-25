@@ -3,6 +3,7 @@ body {
   background-color: #edeaea;
   display: flex;
   justify-content: center;
+  font-family: "Nanum Gothic", sans-serif;
 }
 
 #root {
