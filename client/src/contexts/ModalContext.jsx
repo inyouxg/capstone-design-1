@@ -19,6 +19,7 @@ export const ModalProvider = ({ children }) => {
       {children}
       {modalContent && (
         <div
+          onClick={closeModal}
           style={{
             position: "fixed",
             top: 0,

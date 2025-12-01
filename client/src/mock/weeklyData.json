@@ -1,0 +1,42 @@
+{
+  "weekly_summary": {
+    "start_date": "2025-11-19",
+    "end_date": "2025-11-25"
+  },
+  "weekly_data": [
+    { "date": "2025-11-19", "label": "11/19", "kcal": 1500 },
+    { "date": "2025-11-20", "label": "11/20", "kcal": 0 },
+    { "date": "2025-11-21", "label": "11/21", "kcal": 1700 },
+    { "date": "2025-11-22", "label": "11/22", "kcal": 1900 },
+    { "date": "2025-11-23", "label": "11/23", "kcal": 0 },
+    { "date": "2025-11-24", "label": "11/24", "kcal": 2000 },
+    { "date": "2025-11-25", "label": "11/25", "kcal": 1750 }
+  ],
+  "summary": {
+    "calories": 12250,
+    "carbs": 900,
+    "protein": 360,
+    "fat": 280
+  },
+  "highlight": {
+    "high": [
+      {
+        "nutrient": "fat",
+        "label": "지방",
+        "pct": 12
+      },
+      {
+        "nutrient": "calories",
+        "label": "칼로리",
+        "pct": 6
+      }
+    ],
+    "low": [
+      {
+        "nutrient": "protein",
+        "label": "단백질",
+        "pct": -14
+      }
+    ]
+  }
+}
