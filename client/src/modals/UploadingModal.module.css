@@ -55,11 +55,12 @@
   justify-content: center;
   width: 260px;
   border: none;
-  gap: 15px;
+  gap: 10px;
 }
 .modal-container__radio-label{
   display: flex;
   flex-direction: row;
+  font-size: 12px;
 }
 .modal-container__radio-label input{
   margin-right: 3px;

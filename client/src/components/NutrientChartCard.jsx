@@ -22,7 +22,13 @@ export const NutrientChartCard = ({ dashboard }) => {
           <div key={idx} className={styles['nutrient-container__section']}>
             <h3 className={styles[macro.key]}>{macro.label}</h3>
             <p>
-              <span>{dashboard.macros[macro.key].value.toFixed(1)}</span>
+              <span
+                className={
+                  dashboard.macros[macro.key].value > dashboard.macros[macro.key].goal
+                    ? styles.over
+                    : styles.normal}>
+                {dashboard.macros[macro.key].value.toFixed(1)}
+              </span>
               <span> / {dashboard.macros[macro.key].goal.toFixed(0)}g</span>
             </p>
           </div>
