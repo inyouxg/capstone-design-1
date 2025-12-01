@@ -24,7 +24,7 @@ export const EntryRoute = () => {
         console.error(
           "EntryRoute 상태 조회 실패:",
           error?.response?.status,
-          error?.response?.data || err?.message
+          error?.response?.data || error?.message
         );
         // 상태 조회 실패 시 안전하게 인트로
         navigate("/intro", { replace: true });

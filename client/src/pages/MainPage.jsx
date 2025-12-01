@@ -28,6 +28,7 @@ export const MainPage = () => {
         ]);
         if (!mounted) return;
         setState({ loading: false, error: null, dashboard, diet });
+        sessionStorage.removeItem("profileCompleted");
       } catch (error) {
         if (!mounted) return;
         // 서버 에러 시 → mock data

@@ -38,6 +38,7 @@ export const ProfileSettingPage = () => {
     try{
       const result = await submitProfile(data);
       if (result?.success) {
+        sessionStorage.setItem("profileCompleted", "true");
         openModal(<ProfileSettingModal navigate={navigate} onClose={closeModal}/>)
       } else {
         alert("프로필 저장 실패!"); /*모달 생성 예정*/

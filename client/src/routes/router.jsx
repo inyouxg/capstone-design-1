@@ -30,7 +30,13 @@ const router = createBrowserRouter([
         <ProfileSettingPage />
       </ProtectRoute>
   },
-  { path: "/main", element: <MainPage /> },
+  {
+    path: "/main",
+    element:
+      <ProtectRoute>
+        <MainPage />
+      </ProtectRoute>
+  },
   { path: `/report/:mealId`, element: <DietReportPage /> },
   { path: "*", element: <NotFound /> },
 ]);
